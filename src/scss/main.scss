@@ -1,0 +1,17 @@
+@import './settings/reset';
+@import './settings/fonts';
+@import './settings/colors';
+
+// Home
+@import '../components/Home/home';
+
+@import '../components/Home/HomeHeader/home-header';
+@import '../components/Home/HomeMain/home-main';
+@import '../components/Home/HomeThreeColumns/home-three-columns';
+@import '../components/Home/HomeFourBoxes/home-four-boxes';
+@import '../components/Home/HomeAboutUs/home-about-us';
+@import '../components/Home/HomeHelpInfo/home-help-info';
+@import '../components/Home/HomeContactForm/home-contact-form';
+
+
+
