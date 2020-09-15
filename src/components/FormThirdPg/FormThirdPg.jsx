@@ -7,7 +7,7 @@ const FormThirdPg = () => {
   return (
     <>
       <FormMain />
-      <FormYellowBar />
+      <FormYellowBar text="Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."/>
       <h2>Form Third Page</h2>
       <HomeContactForm />
     </>

@@ -1,0 +1,23 @@
+.form__yellow__bar {
+    min-height: 15vh;
+    width: 100%;
+    background-color: $needy-yellow;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    &__text {
+        margin: 30px 80px;
+
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.25;
+        }
+    }
+}

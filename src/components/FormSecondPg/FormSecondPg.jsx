@@ -7,7 +7,7 @@ const FormSecondPg = () => {
   return (
     <>
       <FormMain />
-      <FormYellowBar />
+      <FormYellowBar text="Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ."/>
       <h2>Form Second Page</h2>
       <HomeContactForm />
     </>

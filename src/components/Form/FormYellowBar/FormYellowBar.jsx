@@ -1,8 +1,15 @@
 import React from 'react';
 
-const FormYellowBar = () => {
+const FormYellowBar = (props) => {
     return (
-        <h2>Yellow Bar</h2>
+        <>
+        <section className="form__yellow__bar">
+            <div className="form__yellow__bar__text">
+                <h2>Ważne</h2>
+                <p>{props.text}</p>
+            </div>
+        </section>
+        </>
     );
 }
 

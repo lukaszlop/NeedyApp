@@ -7,7 +7,7 @@ const FormFourthPg = () => {
   return (
     <>
       <FormMain />
-      <FormYellowBar />
+      <FormYellowBar text="Podaj adres oraz termin odbioru rzeczy."/>
       <h2>Form Fourth Page</h2>
       <HomeContactForm />
     </>

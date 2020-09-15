@@ -7,9 +7,7 @@ const FormMain = () => {
         <div className="form__main__container">
           <div className="form__main__box">
             <h2>
-              Oddaj rzeczy, których już nie chcesz
-              
-              POTRZEBUJĄCYM
+              Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM
             </h2>
             <div className="form__main__box__img"></div>
             <h3>Wystarczą 4 proste kroki:</h3>
