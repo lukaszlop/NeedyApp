@@ -30,7 +30,11 @@ const Hamburger = (props) => {
         >
           <ul className="navigation__list">
             <li className="navigation__item">
-              <Link onClick={handleOnClick} to="/" className="navigation__item__start">
+              <Link
+                onClick={handleOnClick}
+                to="/"
+                className="navigation__item__start"
+              >
                 Start
               </Link>
             </li>
@@ -44,17 +48,15 @@ const Hamburger = (props) => {
               <a href="">Fundacja i organizacje</a>
             </li>
             <li className="navigation__item">
-              <Link onClick={handleOnClick} to="/kontakt">
+              <a href="">
                 Kontakt
-              </Link>
+              </a>
             </li>
           </ul>
           {props.user.email && (
             <ul className="navigation__list navigation__log">
               <li className="navigation__item ">
-                <Link onClick={handleOnClick} to="/logowanie">
-                  Jesteś zalogowany
-                </Link>
+                <a href="">Jesteś zalogowany</a>
               </li>
             </ul>
           )}
@@ -66,7 +68,11 @@ const Hamburger = (props) => {
                 </Link>
               </li>
               <li className="navigation__item">
-                <Link onClick={handleOnClick} to="/rejestracja" className="navigation__item--create">
+                <Link
+                  onClick={handleOnClick}
+                  to="/rejestracja"
+                  className="navigation__item--create"
+                >
                   Załóż konto
                 </Link>
               </li>

@@ -3,6 +3,7 @@
 @import "./settings/colors";
 
 // Home
+
 @import "../components/Home/home";
 
 @import "../components/Nav/nav";
@@ -20,10 +21,29 @@
 @import "../components/Home/HomeContactForm/home-contact-form";
 
 // Login
+
 @import "../components/Login/login";
 
 // Register
+
 @import "../components/Register/register";
 
 // Logout
+
 @import '../components/Logout/logout';
+
+// Form
+
+@import '../components/Form/FormMain/form-main';
+
+@import '../components/Form/FormYellowBar/form-yellow-bar';
+
+// Form Pages
+
+@import '../components/FormFirstPg/form-first-pg';
+
+@import '../components/FormSecondPg/form-second-pg';
+
+@import '../components/FormThirdPg/form-third-pg';
+
+@import '../components/FormFourthPg/form-fourth-pg';

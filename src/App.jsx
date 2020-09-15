@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./components/Home/Home";
-import HomeContactForm from "./components/Home/HomeContactForm/HomeContactForm";
 import Nav from "./components/Nav/Nav";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -11,8 +10,11 @@ import "firebase/auth";
 import { createStore } from "redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { rootReducer } from "./store/root.reducer";
-
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import FormFirstPg from "./components/FormFirstPg/FormFirstPg";
+import FormSecondPg from "./components/FormSecondPg/FormSecondPg";
+import FormThirdPg from "./components/FormThirdPg/FormThirdPg";
+import FormFourthPg from "./components/FormFourthPg/FormFourthPg"
 
 const fbConfig = {
   apiKey: "AIzaSyCqNYsWlJGWRF63Bv4v-guKwO2qKMDkx1I",
@@ -48,7 +50,16 @@ function App() {
             <Route path="/" exact component={Home} />
           </Switch>
           <Switch>
-            <Route path="/kontakt" exact component={HomeContactForm} />
+            <Route path="/formularz/1" exact component={FormFirstPg} />
+          </Switch>
+          <Switch>
+            <Route path="/formularz/2" exact component={FormSecondPg} />
+          </Switch>
+          <Switch>
+            <Route path="/formularz/3" exact component={FormThirdPg} />
+          </Switch>
+          <Switch>
+            <Route path="/formularz/4" exact component={FormFourthPg} />
           </Switch>
           <Switch>
             <Route path="/logowanie" exact component={Login} />
