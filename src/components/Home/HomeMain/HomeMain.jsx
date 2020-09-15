@@ -3,7 +3,7 @@ import React from "react";
 const HomeMain = () => {
   return (
     <>
-      <section className="home__main">
+      <section className="home__main" id="home__main">
         <div className="home__main__container">
           <div className="home__main__box">
             <h2>
@@ -25,9 +25,7 @@ const HomeMain = () => {
               </button>
             </div>
           </div>
-          <div className="home__main__wrapper">
-            <div className="home__main__img"></div>
-          </div>
+          
         </div>
       </section>
     </>

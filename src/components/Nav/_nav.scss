@@ -109,6 +109,7 @@
 
     @media (min-width: 920px) {
       display: inline-block;
+      background-color: transparent;
       .navigation__item__start {
         border: 1px solid $needy-dark-grey;
       }
@@ -126,17 +127,16 @@
   }
 
   @media (min-width: 920px) {
-    background-color: inherit;
-    width: 100%;
+    background-color: transparent;
     position: relative;
+    width: auto;
     height: auto;
-    
     text-align: right;
     transform: translateX(0vw);
     display: flex;
     flex-flow: column nowrap;
     flex-direction: column-reverse;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
   }
 }

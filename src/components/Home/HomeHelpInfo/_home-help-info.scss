@@ -1,0 +1,107 @@
+.home__help__wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .home__help__headline {
+        margin-top: 80px;
+        font-size: 30px;
+        color: $needy-dark-grey;
+        text-align: center;
+    }
+
+
+    .home__help__img {
+        background-image: url("../../../assets/Decoration.svg");
+        height: 30px;
+        width: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 30px 0 30px;
+    }
+
+    .home__help__btns {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+
+        button {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        width: 220px;
+        height: 72px;
+        text-decoration: none;
+        background-color: transparent;
+        color: $needy-dark-grey;
+        line-height: 1.25em;
+        margin: 15px 10px;
+        border: 1px solid $needy-dark-grey;
+        }  
+    }
+
+    .home__help__text {
+        text-align: center;
+        max-width: 460px;
+        line-height: 1.5;
+        margin: 30px 0;
+    }
+
+    .home__help__line {
+        margin: 0 auto;
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        padding: 20px 20px 20px 20px;
+        font-weight: 300;
+        line-height: 1.5;
+        
+
+        .home__help__line--left {
+            text-align: left;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+                font-style: italic;
+            }
+            
+        }
+
+        .home__help__line--right {
+            text-align: right;
+            p {
+                font-size: 14px;
+            }
+            
+        }
+    }
+
+    .home__help__line__border {
+        border-top: 1px solid #cbcccc;
+            border-bottom: 1px solid #cbcccc;
+    }
+
+    .home__help__pages {
+        button {
+            font-family: $font-base;
+            height: 40px;
+            width: 30px;
+            background-color: transparent;
+            margin: 40px 10px 60px;
+        }
+    }
+}

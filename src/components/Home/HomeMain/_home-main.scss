@@ -1,15 +1,18 @@
 .home__main {
-  height: 100vh;
-
+  height: 60vh;
   @media (min-width: 920px) {
-    height: 100%;
+    height: 83vh;
+    background-image: url("../../../assets/Home-Hero-Image.jpg");
+    background-size: contain;
+    background-position: -200px bottom;
+    background-repeat: no-repeat;
   }
 
   &__container {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     @media (min-width: 920px) {
@@ -24,17 +27,15 @@
       }
 
       .home__main__wrapper {
-          width: 65%;
-        
-        .home__main__img {
+        width: 65%;
 
-        }
+        
       }
     }
   }
 
   &__box {
-      margin-top: 100px;
+    // margin-top: 100px;
     display: flex;
     flex-direction: column;
     max-width: 800px;
@@ -45,6 +46,7 @@
     h2 {
       text-align: center;
       line-height: 1.5em;
+      font-size: 20px;
     }
 
     &__img {
@@ -60,7 +62,7 @@
     &__btns {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
 
       button {
@@ -69,24 +71,18 @@
         width: 45%;
         max-width: 250px;
         padding: 20px 0;
-        background-color: transparent;
+        background-color: rgba(255, 255, 255, .5);
         border: 1px solid $needy-dark-grey;
       }
     }
   }
 
   &__wrapper {
-    width: 100%;
-    
-  }
-
-  &__img {
-    position: relative;
-    left: -30%;
     height: 70vh;
-    background-image: url("../../../assets/Home-Hero-Image.jpg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  }
+  &__img {
+    // position: relative;
+    // left: -30%;
+    
   }
 }
