@@ -7,7 +7,7 @@ const FormFirstPg = () => {
   return (
     <>
       <FormMain />
-      <FormYellowBar />
+      <FormYellowBar text="Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać."/>
       <h2>Form First Page</h2>
       <HomeContactForm />
     </>
