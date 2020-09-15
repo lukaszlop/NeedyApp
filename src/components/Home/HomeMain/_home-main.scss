@@ -1,7 +1,7 @@
 .home__main {
   height: 60vh;
   @media (min-width: 920px) {
-    height: 83vh;
+    height: 84vh;
     background-image: url("../../../assets/Home-Hero-Image.jpg");
     background-size: contain;
     background-position: -200px bottom;
@@ -35,7 +35,6 @@
   }
 
   &__box {
-    // margin-top: 100px;
     display: flex;
     flex-direction: column;
     max-width: 800px;
@@ -76,9 +75,4 @@
       }
     }
   }
-
-  &__wrapper {
-    height: 70vh;
-  }
-  
 }
