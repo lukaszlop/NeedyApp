@@ -1,20 +1,24 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Logout = () => {
-    return (
-        <div>
-            <>
-        <section className="logout__wrapper">
+  return (
+    <>
+      <section className="logout__wrapper">
         <div className="logout">
-          <h2>Wylogowanie nastąpiło<br/>pomyślnie!</h2>
+          <h2>
+            Wylogowanie nastąpiło
+            <br />
+            pomyślnie!
+          </h2>
           <div className="logout__img"></div>
-          <button>Strona główna</button>
-          
+          <Link to="/" className="logout_btn">
+            Strona główna
+          </Link>
         </div>
       </section>
-        </>
-        </div>
-    );
-}
+    </>
+  );
+};
 
 export default Logout;

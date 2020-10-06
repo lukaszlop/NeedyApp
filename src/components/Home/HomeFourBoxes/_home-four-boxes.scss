@@ -107,12 +107,12 @@
         }
     }
 
-    .four__boxes__btn {
+    .four__boxes__btn__box {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        button {
+        .four__boxes__btn {
         text-transform: uppercase;
         font-family: 'Open Sans', sans-serif;
         font-size: 20px;

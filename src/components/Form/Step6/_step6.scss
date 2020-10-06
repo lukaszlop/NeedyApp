@@ -1,0 +1,34 @@
+.step6 {
+    width: 100%;
+    margin: 100px auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    @media (min-width: 920px) {
+        margin: 268.5px auto;
+    }
+    @media (min-width: 1400px) {
+        margin-left: 15%;
+    }
+
+    h3 {
+        font-size: 30px;
+        font-weight: 500;
+        
+    }
+
+.step6__img {
+        background-image: url("../../../assets/Decoration.svg");
+        height: 30px;
+        width: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 20px 0;
+}
+
+}

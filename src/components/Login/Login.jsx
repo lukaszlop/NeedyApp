@@ -77,9 +77,9 @@ const Login = (props) => {
           </div>
           <div className="login__btns">
             <Link className="login__btn--create" to={"/rejestracja"}>Załóż konto</Link>
-            <button className="login__btn--login" onClick={loginHandler}>
+            <Link to="/" className="login__btn--login" onClick={loginHandler}>
               Zaloguj się
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -38,12 +38,16 @@
 
 @import '../components/Form/FormYellowBar/form-yellow-bar';
 
-// Form Pages
+@import '../components/Form/FormWrapper/form-wrapper';
 
-@import '../components/FormFirstPg/form-first-pg';
+@import '../components/Form/Step1/step1';
 
-@import '../components/FormSecondPg/form-second-pg';
+@import '../components/Form/Step2/step2';
 
-@import '../components/FormThirdPg/form-third-pg';
+@import '../components/Form/Step3/step3';
 
-@import '../components/FormFourthPg/form-fourth-pg';
+@import '../components/Form/Step4/step4';
+
+@import '../components/Form/Step5/step5';
+
+@import '../components/Form/Step6/step6';

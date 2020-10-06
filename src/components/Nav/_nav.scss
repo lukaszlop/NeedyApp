@@ -1,7 +1,10 @@
 .hamburger__wrapper {
   position: fixed;
+  z-index: 100;
+  
   @media (min-width: 920px) {
     position: relative;
+    background-color: transparent;
   }
 }
 
@@ -100,7 +103,7 @@
   }
 
   &__log {
-    margin-top: 20px;
+    margin-top: 0;
     list-style: none;
   }
 
@@ -109,11 +112,12 @@
 
     @media (min-width: 920px) {
       display: inline-block;
-      background-color: transparent;
       .navigation__item__start {
         border: 1px solid $needy-dark-grey;
+        
       }
-      .navigation__item--create {
+      .navigation__item--create,
+      .navigation__item--share-things {
         border: 1px solid $needy-yellow;
       }
     }
@@ -123,12 +127,23 @@
       margin-left: 30px;
       text-decoration: none;
       color: $needy-dark-grey;
+      @media (min-width: 920px) {
+        background-color: rgba(255, 255, 255, .7);
+      }
+    }
+
+    .navigation__item--welcome {
+      margin-left: 30px;
+      padding: 10px 20px;
+      color: $needy-dark-grey;
     }
   }
 
   @media (min-width: 920px) {
     background-color: transparent;
-    position: relative;
+    position: absolute;
+    top: 15px;
+    right: 0;
     width: auto;
     height: auto;
     text-align: right;
@@ -143,4 +158,5 @@
 
 .navigation--active {
   transform: translateX(0px);
+  background-color: $needy-light-grey;
 }

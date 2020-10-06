@@ -1,0 +1,51 @@
+.step2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .step2__headline {
+    font-size: 24px;
+    margin-top: 10%;
+    font-weight: 600;
+  }
+
+  .step2__select {
+      margin-top: 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @media (min-width: 920px) {
+          margin-bottom: 248px;
+      }
+
+      select {
+          margin-left: 20px;
+          background-color: transparent;
+          padding: 8px;
+          width: 176px;
+      }
+  }
+
+  .step2__btns {
+      display: flex;
+
+    button {
+      font-family: $font-base;
+      color: $needy-dark-grey;
+      padding: 15px 0;
+      width: 120px;
+      text-align: center;
+      margin: 40px 20px 0 0;
+      background-color: transparent;
+      border: 1px solid $needy-dark-grey;
+    }
+
+    button + button {
+        margin-right: 0;
+    }
+  }
+}

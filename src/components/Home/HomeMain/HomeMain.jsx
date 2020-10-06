@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-const HomeMain = () => {
+const HomeMain = (props) => {
   return (
     <>
       <section className="home__main" id="home__main">
@@ -13,23 +15,43 @@ const HomeMain = () => {
             </h2>
             <div className="home__main__box__img"></div>
             <div className="home__main__box__btns">
-              <button>
-                oddaj
-                <br />
-                rzeczy
-              </button>
-              <button>
-                zorganizuj
-                <br />
-                zbiórkę
-              </button>
+              {props.user.email ? (
+                <>
+                  <Link to="/oddaj-rzeczy" className="home__main__box__btn">
+                    oddaj
+                    <br />
+                    rzeczy
+                  </Link>
+                  <Link to="/oddaj-rzeczy" className="home__main__box__btn">
+                    zorganizuj
+                    <br />
+                    zbiórkę
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/logowanie" className="home__main__box__btn">
+                    oddaj
+                    <br />
+                    rzeczy
+                  </Link>
+                  <Link to="/logowanie" className="home__main__box__btn">
+                    zorganizuj
+                    <br />
+                    zbiórkę
+                  </Link>
+                </>
+              )}
             </div>
           </div>
-          
         </div>
       </section>
     </>
   );
 };
 
-export default HomeMain;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(HomeMain);

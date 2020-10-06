@@ -5,9 +5,17 @@ import {
     combineReducers
 } from "redux";
 
-import {userReducer} from './user'
+import {
+    userReducer
+} from './user'
+import {
+    formReducer
+} from './form'
+import { appConfigReducer } from "./appConfig";
 
 export const rootReducer = combineReducers({
     firebase: firebaseReducer,
-    user: userReducer
+    user: userReducer,
+    form: formReducer,
+    appConfig: appConfigReducer
 });

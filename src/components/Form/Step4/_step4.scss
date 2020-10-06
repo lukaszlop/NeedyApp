@@ -1,0 +1,144 @@
+.step4 {
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .step4__headline {
+    font-size: 24px;
+    margin-top: 10%;
+    font-weight: 600;
+  }
+
+  .step4__data {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 40px;
+
+      @media (min-width: 920px) {
+          flex-direction: row;
+          align-items: flex-start;
+      }
+
+      .step4__adress {
+          width: 100%;
+          @media (min-width: 920px) {
+              margin-right: 20%;
+              flex-grow: 1;
+          }
+          h3 {
+              font-size: 20px;
+              font-weight: 600;
+            }
+            
+            .step4__adress__box {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            label {
+                width: 40%;
+                @media (min-width: 920px) {
+                    width: 100px;
+                    
+                }
+            }
+
+            input {
+                height: 24px;
+                width: 60%;
+                background-color: transparent;
+                border: 1px solid $needy-dark-grey;
+                @media (min-width: 920px) {
+                    width: 220px;
+                    background-color: rgba(255, 255, 255, .3);
+                }
+            }
+        }
+
+      }
+
+      .step4__term {
+          width: 100%;
+        h3 {
+            margin-top : 30px;
+            font-size: 20px;
+            font-weight: 600;
+
+        @media (min-width: 920px) {
+            margin-top: 0;
+            flex-grow: 1;
+        }
+        }
+
+        .step4__term__box {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            label {
+                width: 40%;
+                @media (min-width: 920px) {
+                    width: 100px;
+                }
+                
+            }
+
+            input {
+                height: 24px;
+                width: 60%;
+                background-color: transparent;
+                border: 1px solid $needy-dark-grey;
+                @media (min-width: 920px) {
+                    width: 220px;
+                    background-color: rgba(255, 255, 255, .3);
+                }
+                
+                
+            }
+
+            textarea {
+                width: 60%;
+                height: 80px;
+                resize: none;
+                background-color: transparent;
+                border: 1px solid $needy-dark-grey;
+                font-family: $font-base;
+                @media (min-width: 920px) {
+                    width: 220px;
+                    background-color: rgba(255, 255, 255, .3);
+
+                }    
+            }
+        }
+    }
+  }
+
+  .step4__btns {
+    align-self: start;
+
+    button {
+        font-family: $font-base;
+        color: $needy-dark-grey;
+        padding: 15px 0;
+        width: 120px;
+        text-align: center;
+        margin: 121px 20px 0 0;
+        background-color: transparent;
+        border: 1px solid $needy-dark-grey;
+    }
+
+    button + button {
+        margin-right: 0;
+    }
+  }
+}

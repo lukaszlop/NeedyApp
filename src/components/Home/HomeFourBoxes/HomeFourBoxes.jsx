@@ -1,6 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setIsRedirectFromHomeView } from "../../../store/appConfig/appConfig.actions";
 
-const HomeFourBoxes = () => {
+const HomeFourBoxes = (props) => {
+  const setRedirectFlag = () => {
+    props.setIsRedirectFromHomeView(true);
+  };
   return (
     <section className="four__boxes__wrapper" id="four__boxes">
       <div className="four__boxes__headline">
@@ -53,11 +59,37 @@ const HomeFourBoxes = () => {
           </div>
         </div>
       </div>
-      <div className="four__boxes__btn">
-        <button>oddaj<br/>rzeczy</button>
+      <div className="four__boxes__btn__box">
+        {props.user.email ? (
+          <>
+            {setRedirectFlag()}
+            <Link to="/oddaj-rzeczy" className="four__boxes__btn">
+              oddaj
+              <br />
+              rzeczy
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/logowanie" className="four__boxes__btn">
+              oddaj
+              <br />
+              rzeczy
+            </Link>
+          </>
+        )}
       </div>
     </section>
   );
 };
 
-export default HomeFourBoxes;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setIsRedirectFromHomeView: (isRedirect) =>
+    dispatch(setIsRedirectFromHomeView(isRedirect)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFourBoxes);

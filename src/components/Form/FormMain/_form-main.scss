@@ -1,11 +1,11 @@
 .form__main {
-    height: 60vh;
+    height: 80vh;
 
     @media (min-width: 920px) {
-        height: 83vh;
+        height: 92vh;
         background-image: url("../../../assets/Form-Hero-Image.jpg");
         background-size: contain;
-        background-position: -200px bottom;
+        background-position: -200px top;
         background-repeat: no-repeat;
     }
 
@@ -21,20 +21,11 @@
         align-items: center;
 
         @media (min-width: 920px) {
-            flex-direction: row-reverse;
-            justify-content: space-evenly;
-
             .form__main__box {
                 width: 35%;
                 margin: 0 auto;
                 height: 100%;
                 margin-right: 100px;
-            }
-
-            .form__main__wrapper {
-                width: 65%;
-
-
             }
         }
     }
@@ -49,6 +40,7 @@
         padding: 10px;
 
         h2 {
+            margin-top: 100px;
             text-align: center;
             line-height: 1.5em;
             font-size: 30px;
