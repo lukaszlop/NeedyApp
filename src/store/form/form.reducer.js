@@ -9,7 +9,7 @@ import {
 
 const form = {
     activeStep: 0,
-    typeOfClothes: null,
+    typeOfDonation: null,
     numberOfBags: null,
     localization: null,
     needy: null,
@@ -35,12 +35,12 @@ export const formReducer = (state = form, action) => {
         case SET_STEP_1_DATA: {
             const {
                 payload: {
-                    typeOfClothes
+                    typeOfDonation
                 }
             } = action;
             return {
                 ...state,
-                typeOfClothes
+                typeOfDonation
             };
         }
         case SET_STEP_2_DATA: {

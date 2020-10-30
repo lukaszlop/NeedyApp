@@ -7,7 +7,7 @@ const clothesLabels = [
   "ubrania, do wyrzucenia",
   "zabawki",
   "książki",
-  "Inne"
+  "Inne",
 ];
 
 const Step1 = (props) => {
@@ -31,7 +31,7 @@ const Step1 = (props) => {
 
     event.preventDefault();
     props.setStep1Data({
-      typeOfClothes: label,
+      typeOfDonation: label,
     });
     props.setStep(1);
   };
@@ -95,12 +95,9 @@ const Step1 = (props) => {
   );
 };
 
-
-
 const mapDispatchToProps = (dispatch) => ({
   setStep: (activeStep) => dispatch(setStep(activeStep)),
-  setStep1Data: (payload) =>
-    dispatch(setStep1Data(payload)),
+  setStep1Data: (payload) => dispatch(setStep1Data(payload)),
 });
 
 export default connect(null, mapDispatchToProps)(Step1);

@@ -28,7 +28,7 @@ const Step5 = ({ form, setStep, auth, firebase }) => {
         data: [
           ...userData,
           {
-            typeOfClothes: form.typeOfClothes,
+            typeOfDonation: form.typeOfDonation,
             numberOfBags: form.numberOfBags,
             localization: form.localization,
             needy: form.needy,
@@ -67,7 +67,8 @@ const Step5 = ({ form, setStep, auth, firebase }) => {
                   ? form.numberOfBags + " worków, "
                   : form.numberOfBags + " worki, "
                 : form.numberOfBags + " worek, "}
-              {form.typeOfClothes}, {form.needy.join(", ").replace(/,\s*$/, "")}
+              {form.typeOfDonation},{" "}
+              {form.needy.join(", ").replace(/,\s*$/, "")}
             </p>
           </div>
           <div className="step5__box__sum__localization">
