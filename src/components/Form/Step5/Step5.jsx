@@ -28,8 +28,10 @@ const Step5 = ({ form, setStep, auth, firebase }) => {
         data: [
           ...userData,
           {
+            typeOfClothes: form.typeOfClothes,
             numberOfBags: form.numberOfBags,
             localization: form.localization,
+            needy: form.needy,
             organization: form.organization,
             street: form.street,
             city: form.city,
