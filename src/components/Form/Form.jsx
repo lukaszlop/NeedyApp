@@ -5,12 +5,16 @@ import HomeContactForm from "../Home/HomeContactForm/HomeContactForm";
 import FormWrapper from "../Form/FormWrapper/FormWrapper";
 import { connect } from "react-redux";
 import { clearIsRedirectFromHomeView } from "../../store/appConfig/appConfig.actions";
+import { useFirestoreConnect } from "react-redux-firebase";
 
 const Form = ({
   form: { activeStep },
   appConfig,
   clearIsRedirectFromHomeView,
 }) => {
+
+  useFirestoreConnect([{ collection: "applications" }]);
+
   useEffect(() => {
     if (appConfig.isRedirectFromHomeView) {
       clearIsRedirectFromHomeView();
@@ -18,20 +22,20 @@ const Form = ({
   }, [appConfig]);
 
   const scrollIntoView = () => {
-    setTimeout(()=> {
+    setTimeout(() => {
       const element = document.getElementById("form-section-start");
-      element.scrollIntoView(); 
-    }, 500)
-  }
+      if (element) {
+        element.scrollIntoView();
+      }
+    }, 500);
+  };
   return (
     <>
       <FormMain />
-      {activeStep < 4 && <FormYellowBar />}
+      {activeStep < 4 && <FormYellowBar id="form-section-start" />}
       <FormWrapper />
       <HomeContactForm />
-      {appConfig.isRedirectFromHomeView && 
-        scrollIntoView()
-      }
+      {appConfig.isRedirectFromHomeView && scrollIntoView()}
     </>
   );
 };

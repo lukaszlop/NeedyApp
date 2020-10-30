@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setIsRedirectFromHomeView } from "../../../store/appConfig/appConfig.actions";
 
-const HomeFourBoxes = (props) => {
-  const setRedirectFlag = () => {
-    props.setIsRedirectFromHomeView(true);
-  };
+const HomeFourBoxes = ({auth}) => {
+  
   return (
     <section className="four__boxes__wrapper" id="four__boxes">
       <div className="four__boxes__headline">
@@ -60,9 +58,8 @@ const HomeFourBoxes = (props) => {
         </div>
       </div>
       <div className="four__boxes__btn__box">
-        {props.user.email ? (
+        {auth.email ? (
           <>
-            {setRedirectFlag()}
             <Link to="/oddaj-rzeczy" className="four__boxes__btn">
               oddaj
               <br />
@@ -84,7 +81,7 @@ const HomeFourBoxes = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  auth: state.firebase.auth,
 });
 
 const mapDispatchToProps = (dispatch) => ({

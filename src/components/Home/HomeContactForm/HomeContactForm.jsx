@@ -83,7 +83,7 @@ const HomeContactForm = () => {
                 <label htmlFor="name">Wpisz swoje imię</label>
                 <input
                   value={name}
-                  onInput={(event) => setName(event.target.value)}
+                  onChange={(event) => setName(event.target.value)}
                   type="text"
                   id="name"
                   name="name"
@@ -107,7 +107,7 @@ const HomeContactForm = () => {
                 <label htmlFor="email">Wpisz swój email</label>
                 <input
                   value={email}
-                  onInput={(event) => setEmail(event.target.value)}
+                  onChange={(event) => setEmail(event.target.value)}
                   type="email"
                   id="email"
                   name="email"
@@ -132,7 +132,7 @@ const HomeContactForm = () => {
               <label htmlFor="message">Wpisz swoją wiadomość</label>
               <textarea
                 value={message}
-                onInput={(event) => setMessage(event.target.value)}
+                onChange={(event) => setMessage(event.target.value)}
                 name="message"
                 id="message"
                 cols="30"

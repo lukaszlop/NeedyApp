@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import firebase from "firebase";
 import {
   validateEmail,
   emailErrorMessage,
   passwordErrorMessage,
 } from "./Login.helpers";
-import { logUser } from "./../../store/user/user.actions";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState([false, ""]);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState([false, ""]);
+
+  const [redirect, setRedirect] = useState(false);
 
   const emailHandler = (event) => {
     const { value } = event.target;
@@ -35,7 +37,15 @@ const Login = (props) => {
       : setPasswordError([true, passwordErrorMessage]);
 
     if (isEmailValid && isPasswordValid) {
-      props.logUser({ email });
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          setRedirect(true);
+        })
+        .catch((error) => {
+          setPasswordError([true, error.message]);
+        });
     }
   };
 
@@ -58,7 +68,11 @@ const Login = (props) => {
                 onChange={emailHandler}
                 className="login__box__input__email"
               />
-              {emailError[0] && <p className="login__box__input__email--error">{emailError[1]}</p>}
+              {emailError[0] && (
+                <p className="login__box__input__email--error">
+                  {emailError[1]}
+                </p>
+              )}
             </div>
             <div>
               <label htmlFor="password" className="login__box__label__password">
@@ -72,27 +86,30 @@ const Login = (props) => {
                 onChange={passwordHandler}
                 className="login__box__input__password"
               />
-              {passwordError[0] && <p className="login__box__input__password--error">{passwordError[1]}</p>}
+              {passwordError[0] && (
+                <p className="login__box__input__password--error">
+                  {passwordError[1]}
+                </p>
+              )}
             </div>
           </div>
           <div className="login__btns">
-            <Link className="login__btn--create" to={"/rejestracja"}>Załóż konto</Link>
-            <Link to="/" className="login__btn--login" onClick={loginHandler}>
-              Zaloguj się
+            <Link className="login__btn--create" to={"/rejestracja"}>
+              Załóż konto
             </Link>
+            <button className="login__btn--login" onClick={loginHandler}>
+              Zaloguj się
+            </button>
           </div>
         </div>
       </section>
+      {redirect && <Redirect to="" />}
     </>
   );
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  firebase: state.firebase,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  logUser: (user) => dispatch(logUser(user)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps)(Login);

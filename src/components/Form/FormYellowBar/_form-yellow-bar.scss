@@ -7,7 +7,10 @@
     align-items: center;
     
     &__text {
-        margin: 30px 80px;
+        margin: 30px 40px;
+        @media (min-width: 920px) {
+            margin: 30px 80px;
+        }
 
         h2 {
             font-size: 30px;

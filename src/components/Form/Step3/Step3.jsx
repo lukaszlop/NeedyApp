@@ -72,14 +72,13 @@ const Step3 = (props) => {
       checkboxState5
     ];
 
-    const selectedCheckboxes = checkboxes.filter(
-      (checkbox) => checkbox === true
-    );
-
-    const needy = selectedCheckboxes.map((checkbox) => {
-      const index = checkboxes.indexOf(checkbox);
-      const label = helpGroupsLabels[index];
-      return label;
+    const needy = [];
+    
+    checkboxes.forEach((checkbox, index) => {
+      if(checkbox){
+        const label = helpGroupsLabels[index];
+        needy.push(label);
+      }
     });
 
     event.preventDefault();
@@ -108,7 +107,6 @@ const Step3 = (props) => {
 
   return (
     <>
-    {console.log(props.form)}
       <div className="step3">
         <div className="step3__localization">
           <label htmlFor="localization">Lokalizacja</label>
@@ -118,7 +116,7 @@ const Step3 = (props) => {
             id="localization"
             onChange={setLocationHandler}
           >
-            <option disabled selected value="">
+            <option disabled value="">
               wybierz
             </option>
             <option value="Poznań">Poznań</option>
@@ -159,7 +157,7 @@ const Step3 = (props) => {
           </label>
           <input
             type="text"
-            onInput={setOrganizationHandler}
+            onChange={setOrganizationHandler}
             value={organizationName}
           />
         </div>

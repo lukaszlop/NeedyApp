@@ -14,7 +14,7 @@ export const validateZipCode = zipCode => {
 }
 
 export const validateDate = date => {
-    const regDate = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+    const regDate = /^\d{4}-\d{2}-\d{2}$/;
     return regDate.test(String(date));
 }
 
@@ -45,6 +45,6 @@ export const zipCodeErrorMessage = "Wprowadź kod pocztowy w formacie XX-XXX np.
 
 export const phoneNumberErrorMessage = "Numer telefonu musi składać się z dziewięciu cyfr";
 
-export const dateErrorMessage = "Wprowadź datę w formacie DD-MM-YYYY";
+export const dateErrorMessage = "Wprowadź datę w formacie YYYY-MM-DD";
 
 export const timeErrorMessage = "Wprowadź godzinę w formacie HH:MM";

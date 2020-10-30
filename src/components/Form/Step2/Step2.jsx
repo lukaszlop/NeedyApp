@@ -11,7 +11,7 @@ const Step2 = (props) => {
 
   const nextPageClickHandler = (event) => {
     event.preventDefault();
-    props.setStep2Data(selectState);
+    props.setStep2Data({ numberOfBags: selectState });
     props.setStep(2);
   };
 
@@ -22,22 +22,24 @@ const Step2 = (props) => {
 
   const selectHandler = (event) => {
     const { value } = event.target;
-    setSelectState({
-        numberOfBags: value
-    });
+    setSelectState(value);
   };
 
   return (
     <>
-      {console.log(props.form)}
       <div className="step2">
         <h2 className="step2__headline">
           Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
         </h2>
         <div className="step2__select">
           <label htmlFor="bags-number">Liczba 60l worków:</label>
-          <select name="bags-number" id="bags-number" onChange={selectHandler}>
-            <option disabled selected value="">
+          <select
+            value={selectState}
+            name="bags-number"
+            id="bags-number"
+            onChange={selectHandler}
+          >
+            <option disabled value="">
               wybierz
             </option>
             <option value="1">1</option>

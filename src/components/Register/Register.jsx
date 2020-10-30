@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+// import { connect } from "react-redux";
+import firebase from "firebase";
 import {
   validateEmail,
   emailErrorMessage,
@@ -8,7 +9,12 @@ import {
   passwordRepeatErrorMessage,
 } from "../Login/Login.helpers";
 
+
 const Register = (props) => {
+  const [
+    successRedirectAfterRegistration,
+    setSuccessRedirectAfterRegistration,
+  ] = useState(false);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState([false, ""]);
   const [password, setPassword] = useState("");
@@ -27,9 +33,9 @@ const Register = (props) => {
   };
 
   const passwordRepeatHandler = (event) => {
-      const {value} = event.target;
-      setPasswordRepeat(value);
-  }
+    const { value } = event.target;
+    setPasswordRepeat(value);
+  };
 
   const registerHandler = (event) => {
     const isEmailValid = validateEmail(email);
@@ -44,10 +50,17 @@ const Register = (props) => {
     isPasswordRepeatValid
       ? setPasswordRepeatError([false, ""])
       : setPasswordRepeatError([true, passwordRepeatErrorMessage]);
-        
 
     if (isEmailValid && isPasswordValid && isPasswordRepeatValid) {
-      props.logUser({ email });
+      firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        setSuccessRedirectAfterRegistration(true);
+      })
+      .catch((error) => {
+        setPasswordError([true, error.message]);
+      });
     }
   };
 
@@ -91,7 +104,11 @@ const Register = (props) => {
                 onChange={passwordHandler}
                 className="register__box__input__password"
               />
-              {passwordError[0] && <p className="register__box__input__password--error">{passwordError[1]}</p>}
+              {passwordError[0] && (
+                <p className="register__box__input__password--error">
+                  {passwordError[1]}
+                </p>
+              )}
             </div>
             <div class="register__box__password--repeat">
               <label
@@ -108,19 +125,28 @@ const Register = (props) => {
                 onChange={passwordRepeatHandler}
                 className="register__box__input__password--repeat"
               />
-              {passwordRepeatError[0] && <p className="register__box__input__password--repeat--error">{passwordRepeatError[1]}</p>}
+              {passwordRepeatError[0] && (
+                <p className="register__box__input__password--repeat--error">
+                  {passwordRepeatError[1]}
+                </p>
+              )}
             </div>
           </div>
           <div className="register__btns">
             <Link className="register__btn--login" to={"/logowanie"}>
               Zaloguj się
             </Link>
-            <button className="register__btn--create" onClick={registerHandler}>Załóż konto</button>
+            <button className="register__btn--create" onClick={registerHandler}>
+              Załóż konto
+            </button>
           </div>
         </div>
       </section>
+      {successRedirectAfterRegistration && <Redirect to="/" />}
     </>
   );
 };
 
-export default Register;
+export default Register
+
+

@@ -1,6 +1,11 @@
 import React from "react";
 
 const Step6 = () => {
+  
+setTimeout(() => {
+  window.location.href="/";
+}, 5000);
+console.log(window.location.href);
   return (
     <>
       <div className="step6">

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const HomeMain = (props) => {
+const HomeMain = ({auth}) => {
   return (
     <>
       <section className="home__main" id="home__main">
@@ -15,7 +15,7 @@ const HomeMain = (props) => {
             </h2>
             <div className="home__main__box__img"></div>
             <div className="home__main__box__btns">
-              {props.user.email ? (
+              {auth.email ? (
                 <>
                   <Link to="/oddaj-rzeczy" className="home__main__box__btn">
                     oddaj
@@ -51,7 +51,7 @@ const HomeMain = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  auth: state.firebase.auth,
 });
 
 export default connect(mapStateToProps)(HomeMain);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Step1 from "../Step1/Step1";
 import Step2 from "../Step2/Step2";
 import Step3 from "../Step3/Step3";
@@ -21,6 +21,7 @@ const FormWrapper = ({form:{activeStep}}) => {
           {activeStep === 3 && <Step4 />}
           {activeStep === 4 && <Step5 />}
           {activeStep === 5 && <Step6 />}
+          
         </form>
       </section>
     </>

@@ -7,6 +7,10 @@
     background-color: transparent;
   }
 }
+.hamburger__button__wrapper {
+width: 100vw;
+background-color: rgba(255, 255, 255, .7);
+}
 
 .hamburger {
   position: relative;
@@ -17,6 +21,7 @@
   border: 0;
   margin: 0;
   z-index: 20;
+  
 
   &__box {
     width: 40px;
@@ -108,6 +113,7 @@
   }
 
   &__item {
+    max-height: 56px;
     padding: 20px 0;
 
     @media (min-width: 920px) {
@@ -132,9 +138,18 @@
       }
     }
 
+    .navigation__item--logout {
+      padding: 0 20px;
+      margin-left: 30px;
+      text-decoration: none;
+      color: $needy-dark-grey;
+      border: none;
+      background-color: transparent;
+    }
+
     .navigation__item--welcome {
       margin-left: 30px;
-      padding: 10px 20px;
+      padding: 0 20px;
       color: $needy-dark-grey;
     }
   }
@@ -159,4 +174,8 @@
 .navigation--active {
   transform: translateX(0px);
   background-color: $needy-light-grey;
+
+  @media (min-width: 920px) {
+    background-color: transparent;
+  }
 }

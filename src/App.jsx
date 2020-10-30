@@ -6,12 +6,18 @@ import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import { Provider } from "react-redux";
 import firebase from "firebase/app";
+import "firebase/firestore";
 import "firebase/auth";
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { rootReducer } from "./store/root.reducer";
-import { ReactReduxFirebaseProvider } from "react-redux-firebase";
-import Form from './components/Form/Form';
+import {
+  firebaseReducer,
+  ReactReduxFirebaseProvider,
+} from "react-redux-firebase";
+import Form from "./components/Form/Form";
+import { appConfigReducer } from "./store/appConfig";
+import { formReducer } from "./store/form";
+import { createFirestoreInstance, firestoreReducer } from "redux-firestore";
 
 const fbConfig = {
   apiKey: "AIzaSyCqNYsWlJGWRF63Bv4v-guKwO2qKMDkx1I",
@@ -23,19 +29,31 @@ const fbConfig = {
   appId: "1:341012445293:web:c5ef18b0846a8f535ca764",
 };
 
+firebase.initializeApp(fbConfig);
+
 const rrfConfig = {
   userProfile: "users",
+  useFirestoreForProfile: true,
+  enableClaims: true,
 };
 
 const initialState = {};
+
+const rootReducer = combineReducers({
+  firebase: firebaseReducer,
+  firestore: firestoreReducer,
+  form: formReducer,
+  appConfig: appConfigReducer,
+});
+
 const store = createStore(rootReducer, initialState);
 
 const rrfProps = {
   firebase,
   config: rrfConfig,
   dispatch: store.dispatch,
+  createFirestoreInstance,
 };
-firebase.initializeApp(fbConfig);
 
 function App() {
   return (

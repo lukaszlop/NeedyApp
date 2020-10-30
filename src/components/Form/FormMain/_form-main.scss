@@ -1,8 +1,8 @@
 .form__main {
-    height: 80vh;
+    height: 100%;
 
     @media (min-width: 920px) {
-        height: 92vh;
+        height: 100%;
         background-image: url("../../../assets/Form-Hero-Image.jpg");
         background-size: contain;
         background-position: -200px top;
@@ -13,21 +13,14 @@
         background-position: 0 bottom;
     }
 
+    
+
     &__container {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        @media (min-width: 920px) {
-            .form__main__box {
-                width: 35%;
-                margin: 0 auto;
-                height: 100%;
-                margin-right: 100px;
-            }
-        }
     }
 
     &__box {
@@ -39,11 +32,55 @@
         align-items: center;
         padding: 10px;
 
+        @media (min-width: 920px) {
+            width: 40%;
+            margin: 20px auto;
+            height: 100%;
+            margin-right: 100px;
+        }
+
+        @media (min-width: 1400px) {
+            width: 45%;
+            margin: 50px auto;
+            margin-right: 100px;
+        }
+
+        @media (min-width: 1600px) {
+            margin: 100px auto;
+            margin-right: 100px;
+        }
+
+        @media (min-width: 2000px) {
+            width: 50%;
+            margin: 150px auto;
+            margin-right: 150px;
+        }
+
+        @media (min-width: 2000px) {
+            margin: 200px auto;
+            margin-right: 200px;
+        }
+
+        @media (min-width: 2400px) {
+            margin: 200px auto;
+            margin-right: 400px;
+        }
+
+        @media (min-width: 3000px) {
+            margin: 300px auto;
+            margin-right: 500px;
+        }
+
+
         h2 {
             margin-top: 100px;
             text-align: center;
             line-height: 1.5em;
             font-size: 30px;
+
+            @media (min-width: 920px) {
+                margin-top: 180px;  
+            }
         }
 
         &__img {
@@ -67,7 +104,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        
+            @media (min-width: 920px) {
+                
+            }
       
             .form__main__box__diamond {
               text-transform: uppercase;

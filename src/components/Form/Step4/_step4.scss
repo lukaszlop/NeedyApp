@@ -40,8 +40,23 @@
             margin-top: 15px;
             width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+
+            &__street--error,
+            &__city--error,
+            &__zip-code--error,
+            &__phone-number--error {
+                margin-top: 10px;
+                color: red;
+            }
+
+            &__container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
             label {
                 width: 40%;
@@ -61,6 +76,10 @@
                     background-color: rgba(255, 255, 255, .3);
                 }
             }
+
+            
+
+        }   
         }
 
       }
@@ -82,9 +101,22 @@
             margin-top: 15px;
             width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
 
+            &__date--error,
+            &__time--error {
+                margin-top: 10px;
+                color: red;
+            }
+
+            &__container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
             label {
                 width: 40%;
                 @media (min-width: 920px) {
@@ -105,6 +137,7 @@
                 
                 
             }
+        }
 
             textarea {
                 width: 60%;
@@ -132,9 +165,12 @@
         padding: 15px 0;
         width: 120px;
         text-align: center;
-        margin: 121px 20px 0 0;
+        margin: 40px 20px 0 0;
         background-color: transparent;
         border: 1px solid $needy-dark-grey;
+        @media (min-width: 920px) {
+            margin-top: 121px
+          }
     }
 
     button + button {
